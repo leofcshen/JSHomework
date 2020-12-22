@@ -72,6 +72,18 @@
                 ele.innerHTML += "<table><tr><td>"+i +"*" + j + "</td></tr></table>";
             }            
         }
+
+        document.write("<table>");      //<table></table>添加一個表格樣式來顯示乘法表 
+        for (var x = 1; x <= 9; x++)
+        {
+            document.write("<tr>");     //<tr></tr>標簽
+             for (var y = 1; y <= 9; y++)
+             {
+                document.write("<td>" + y + "x" + x + "=" + y * x + "</td>");//亦可用<th>標簽來起到居中加粗內容的作用
+             }
+            document.write("</tr>");
+        }
+        document.write("</table>"); 
     </script>
 
 
