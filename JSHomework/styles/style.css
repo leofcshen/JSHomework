@@ -141,3 +141,9 @@ td, table {
     border: 2px solid red;
     margin: 3px;    
 }
+
+.t1 {
+    width: 100px;
+    float: left;
+    text-align: right;
+}
