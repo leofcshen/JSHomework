@@ -1,4 +1,4 @@
-﻿
+﻿window.onload(homework1());
 function homework1() {
     var str = "";
     str += "<table>";
@@ -55,28 +55,28 @@ function homework2() {
 
         let re = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*])[a-zA-Z\d!@#$%^&*]{6,}$/;
         if (re.test(pwdValue))
-            ele.innerHTML = "<img width=\"20\"px src=\"images/true.jpg\">驗證成功";
+            ele.innerHTML = "<img class=\"imgBool\" src=\"images/true.jpg\">驗證成功";
         else
-            ele.innerHTML = "<img width=\"30\"px src=\"images/false.jpg\">驗證失敗：不可空白，至少6個字元且必須包含英文字母、數字、特殊字元[!@#$%^&*]。"; 
+            ele.innerHTML = "<img class=\"imgBool\" src=\"images/false.jpg\">驗證失敗：不可空白，至少6個字元且必須包含英文字母、數字、特殊字元[!@#$%^&*]。"; 
     }
     function chkDate() {
-        let dateValueObj = new String(document.getElementById("idDate").value);
+        let dateValueDay = document.getElementById("idDate").value; //用來存日期值
         let dateValue = document.getElementById("idDate").value;
         let dateValueTime = new Date(document.getElementById("idDate").value);
         var ele = document.getElementById("idDateChk");
-        let dateValueDate = new Date(document.getElementById("idDate").value).getDate();
-        dateValueObj = dateValueObj.substr(dateValueObj.lastIndexOf("/")+1);
-        console.log(dateValueObj);
+        let dateValueGetDate = new Date(document.getElementById("idDate").value).getDate(); //用來存getDate()值 處理跳日問題
+        dateValueDay = dateValueDay.substr(dateValueDay.lastIndexOf("/") + 1); //取得存 yyyy/mm/dd 的 dd值
 
         let re = /^[\d]{1,}\/[\d]{1,}\/[\d]{1,}$/;
-        if (re.test(dateValue)) {
-            if (dateValueTime != "Invalid Date" && dateValueDate == dateValueObj)
-                ele.innerHTML = "<img width=\"20\"px src=\"images/true.jpg\">驗證成功 " + dateValueTime;
+
+        if (re.test(dateValue)) { //先判斷格式
+            if (dateValueTime != "Invalid Date" && dateValueGetDate == dateValueDay) //再判斷日期
+                ele.innerHTML = "<img class=\"imgBool\" src=\"images/true.jpg\">驗證成功 " + dateValueTime;
             else
-                ele.innerHTML = "<img width=\"30\"px src=\"images/false.jpg\">驗證失敗：不可空白，西元年/月/日，yyyy/MM/dd，該日期需存在。"; 
+                ele.innerHTML = "<img class=\"imgBool\" src=\"images/false.jpg\">驗證失敗：不可空白，西元年/月/日，yyyy/MM/dd，該日期需存在。"; 
         }
         else
-            ele.innerHTML = "<img width=\"30\"px src=\"images/false.jpg\">驗證失敗：格式不正確，不可空白，西元年/月/日，yyyy/MM/dd。"; 
+            ele.innerHTML = "<img class=\"imgBool\" src=\"images/false.jpg\">驗證失敗：格式不正確，不可空白，西元年/月/日，yyyy/MM/dd。"; 
     }
 }
 
