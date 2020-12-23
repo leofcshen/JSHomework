@@ -67,14 +67,25 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="images\5_Grand_Blue.jpg" />
+    <Content Include="images\1_ValleyBall.jpg" />
+    <Content Include="images\2_Naruto.jpg" />
+    <Content Include="images\3_OnePiece.jpg" />
+    <Content Include="images\4_kei.jpg" />
     <Content Include="images\background.jpg" />
     <Content Include="images\chngstar.gif" />
+    <Content Include="images\false.jpg" />
     <Content Include="images\header.jpg" />
     <Content Include="images\star.gif" />
+    <Content Include="images\true.jpg" />
     <Content Include="images\work.gif" />
     <Content Include="Index.html" />
     <Content Include="javascript\javascript.js" />
+    <Content Include="javascript\javascript4.js" />
     <Content Include="styles\style.css" />
+    <Content Include="styles\style4.css" />
+    <Content Include="styles\style_link.css" />
+    <Content Include="test.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
