@@ -1,4 +1,5 @@
-﻿function homework1() {
+﻿
+function homework1() {
     var str = "";
     str += "<table>";
     for (var x = 1; x <= 9; x++) {
@@ -22,31 +23,60 @@ function homework2() {
     var str = "<h2>Homework2</h2>";
     str += "<form action=\"#\" method=\"get\" enctype=\"multipart / form - data\">";
     str += "<fieldset><legend>表單</legend>";
-    str += "<div><label for=\"account1\" class=\"t1\">姓名</label><input type=\"text\" id=\"account1\" name=\"account\" placeholder=\"王建民\" size=\"10\" autocomplete=\"off\" /></div>";
-    str += "<div><label class=\"t1\" id=\"id1\">姓名驗証</label></div></br>";
-    str += "<div><label for=\"pwd1\" class=\"t1\">密碼</label><input type=\"password\" Id=\"pwd1\" name=\"pwd\" placeholder=\"請輸入密碼\" maxlength=\"6\" /></div>";
-    str += "<div><label for=\"date1\" class=\"t1\">日期</label><input type=\"text\" id=\"date1\" name=\"date\" placeholder=\"2020 / 12 / 22\" autocomplete=\"off\" /></div>";
-    str += "<div><input type=\"submit\" id=\"IDsubmit1\" value=\"binding\"  /></div>";
-    str += "<div><input type=\"submit\" id=\"IDsubmit2\" value=\"onclick\" onclick=\"chkName(); return false;\"/></div>";
+    str += "<div><label for=\"account1\" class=\"t1\">姓名</label><input type=\"text\" id=\"idName\" name=\"name\" placeholder=\"王建民\" size=\"10\" autocomplete=\"off\" /></div>";
+    str += "<div><label class=\"t2\" id=\"idNameChk\">不可空白且至少兩個字元，只能中文。</label></div>";
+    str += "<div><label for=\"pwd1\" class=\"t1\">密碼</label><input type=\"text\" Id=\"idPwd\" name=\"pwd\" placeholder=\"請輸入密碼\" /></div>";
+    str += "<div><label class=\"t2\" id=\"idPwdChk\">不可空白，至少6個字元且必須包含英文字母、數字、特殊字元[!@#$%^&*]。</label></div>";
+    str += "<div><label for=\"date1\" class=\"t1\">日期</label><input type=\"text\" id=\"idDate\" name=\"date\" placeholder=\"2020 / 12 / 22\" autocomplete=\"off\" /></div>";    
+    str += "<div><label class=\"t2\" id=\"idDateChk\">不可空白，西元年/月/日，yyyy/MM/dd。</label></div>";
     str += "</fieldset></form>";    
 
     var ele = document.getElementById("IDsection");
     ele.innerHTML = str;
+    
+    document.getElementById("idName").addEventListener("blur", chkName, false);
+    document.getElementById("idPwd").addEventListener("blur", chkPwd, false);
+    document.getElementById("idDate").addEventListener("blur", chkDate, false);
 
-    document.getElementById("IDsubmit1").addEventListener("click", chkName, false);
-
-    function chk() {
-        let nameValue = document.getElementById("account1").value;
-        var ele = document.getElementById("id1");
-
-        console.log(nameValue);
-        let re = /^.{2,}$/;
+    function chkName() {
+        let nameValue = document.getElementById("idName").value;
+        var ele = document.getElementById("idNameChk");
+                
+        let re = /^[\u4e00-\u9fa5]{2,}$/;
         if (re.test(nameValue))
-            ele.innerHTML = "超過2個字";
-        //window.alert("successful");
+            ele.innerHTML = "<img class=\"imgBool\" src=\"images/true.jpg\">驗證成功"; 
         else
-            ele.innerHTML = "不滿2個字";
-        //window.alert("failure");
+            ele.innerHTML = "<img class=\"imgBool\" src=\"images/false.jpg\">驗證失敗：不可空白且至少兩個字元，只能中文。";        
+    }
+
+    function chkPwd() {
+        let pwdValue = document.getElementById("idPwd").value;
+        var ele = document.getElementById("idPwdChk");
+
+        let re = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*])[a-zA-Z\d!@#$%^&*]{6,}$/;
+        if (re.test(pwdValue))
+            ele.innerHTML = "<img width=\"20\"px src=\"images/true.jpg\">驗證成功";
+        else
+            ele.innerHTML = "<img width=\"30\"px src=\"images/false.jpg\">驗證失敗：不可空白，至少6個字元且必須包含英文字母、數字、特殊字元[!@#$%^&*]。"; 
+    }
+    function chkDate() {
+        let dateValueObj = new String(document.getElementById("idDate").value);
+        let dateValue = document.getElementById("idDate").value;
+        let dateValueTime = new Date(document.getElementById("idDate").value);
+        var ele = document.getElementById("idDateChk");
+        let dateValueDate = new Date(document.getElementById("idDate").value).getDate();
+        dateValueObj = dateValueObj.substr(dateValueObj.lastIndexOf("/")+1);
+        console.log(dateValueObj);
+
+        let re = /^[\d]{1,}\/[\d]{1,}\/[\d]{1,}$/;
+        if (re.test(dateValue)) {
+            if (dateValueTime != "Invalid Date" && dateValueDate == dateValueObj)
+                ele.innerHTML = "<img width=\"20\"px src=\"images/true.jpg\">驗證成功 " + dateValueTime;
+            else
+                ele.innerHTML = "<img width=\"30\"px src=\"images/false.jpg\">驗證失敗：不可空白，西元年/月/日，yyyy/MM/dd，該日期需存在。"; 
+        }
+        else
+            ele.innerHTML = "<img width=\"30\"px src=\"images/false.jpg\">驗證失敗：格式不正確，不可空白，西元年/月/日，yyyy/MM/dd。"; 
     }
 }
 
@@ -125,18 +155,4 @@ function homework5() {
     str += "<img src=\"images/work.gif\" />";
     var ele = document.getElementById("IDsection");
     ele.innerHTML = str;
-}
-
-function chkName() {
-    let nameValue = document.getElementById("account1").value;
-    var ele = document.getElementById("id1");
-    
-    console.log(nameValue);
-    let re = /^.{2,}$/;
-    if (re.test(nameValue))
-        ele.innerHTML = "OK";
-        //window.alert("successful");
-    else
-        ele.innerHTML = "No";
-        //window.alert("failure");
 }
