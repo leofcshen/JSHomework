@@ -67,7 +67,7 @@ function homework2() {
         let dateValueGetDate = new Date(document.getElementById("idDate").value).getDate(); //用來存getDate()值 處理跳日問題
         dateValueDay = dateValueDay.substr(dateValueDay.lastIndexOf("/") + 1); //取得存 yyyy/mm/dd 的 dd值
 
-        let re = /^[\d]{1,}\/[\d]{1,}\/[\d]{1,}$/;
+        let re = /^[\d]{1,}\/[\d]{1,2}\/[\d]{1,2}$/;
 
         if (re.test(dateValue)) { //先判斷格式
             if (dateValueTime != "Invalid Date" && dateValueGetDate == dateValueDay) //再判斷日期
