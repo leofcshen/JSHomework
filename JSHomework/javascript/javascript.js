@@ -19,6 +19,7 @@
 }
 
 function homework2() {
+    window.alert("施工中");
     var str = "<h2>Homework2</h2>";
     str += "<form action=\"#\" method=\"get\" enctype=\"multipart / form - data\">";
     str += "<fieldset><legend>表單</legend>";
@@ -27,6 +28,31 @@ function homework2() {
     str += "<div><label for=\"date1\" class=\"t1\">日期</label><input type=\"text\" id=\"date1\" name=\"date\" placeholder=\"2020 / 12 / 22\" autocomplete=\"off\" /></div>";
     str += "<div><input type=\"submit\" value=\"送出\" /></div>";
     str += "</fieldset></form>";
+    str += "<img style= \"img1\" src=\"images/work.gif\" />";
+    var ele = document.getElementById("IDsection");
+    ele.innerHTML = str;
+}
+
+function homework3() {
+    window.alert("施工中");
+    var str = "<h2>Homework3</h2>";
+    str += "<img src=\"images/work.gif\" />";
+    var ele = document.getElementById("IDsection");
+    ele.innerHTML = str;
+}
+
+function homework4() {
+    window.alert("施工中");
+    var str = "<h2>Homework4</h2>";
+    str += "<img src=\"images/work.gif\" />";
+    var ele = document.getElementById("IDsection");
+    ele.innerHTML = str;
+}
+
+function homework5() {
+    window.alert("施工中");
+    var str = "<h2>Homework5</h2>";
+    str += "<img src=\"images/work.gif\" />";
     var ele = document.getElementById("IDsection");
     ele.innerHTML = str;
 }

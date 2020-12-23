@@ -22,7 +22,7 @@ body {
 header {
     height: 238px;
     background-image: url("../images/header.jpg");
-    background-size: 1000px 238px;
+    background-size: 1400px 238px;
 }
 
 h1 {    
@@ -146,4 +146,9 @@ td, table {
     width: 100px;
     float: left;
     text-align: right;
+}
+
+.img1 {
+    display: block;
+    margin: auto;
 }

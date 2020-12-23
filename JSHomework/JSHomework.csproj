@@ -67,12 +67,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="homework2.html" />
     <Content Include="images\background.jpg" />
     <Content Include="images\header.jpg" />
+    <Content Include="images\work.gif" />
     <Content Include="Index.html" />
-    <Content Include="javascript\homework1.js" />
-    <Content Include="ninenine.html" />
+    <Content Include="javascript\javascript.js" />
     <Content Include="styles\style.css" />
     <Content Include="Web.config" />
   </ItemGroup>
