@@ -300,6 +300,7 @@ td, table {
             z-index: 5;
             margin: 5px;
             cursor: pointer;
+            bottom:0;
             background-image: url(/images/playPause.png);
             background-repeat: no-repeat;
             background-size: cover;
