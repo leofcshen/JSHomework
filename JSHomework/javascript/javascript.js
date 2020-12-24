@@ -71,8 +71,8 @@ function homework2() {
 
         let re = /^[\d]{4}\/[\d]{1,2}\/[\d]{1,2}$/; // [0-9]{4位}/[0-9]{1-2位}/[0-9]{1-2位}
         
-        dateV[1] = (dateV[1].length>1) ? dateV[1] : "0" + dateV[1]; //月份補0
-        dateV[2] = (dateV[2].length > 1) ? dateV[2] : "0" + dateV[2]; //日期補0
+        dateV[1] = (dateV[1].length>1) ? dateV[1] : "0" + dateV[1]; //月份補0輸出用
+        dateV[2] = (dateV[2].length > 1) ? dateV[2] : "0" + dateV[2]; //日期補0輸出用
                 
         if (re.test(dateValue)) { //先判斷輸入格式
             if (dateValueOldTime != "Invalid Date" && dateValueGetDate == dateValueDay)  //再判斷日期是否合法且沒跳日
