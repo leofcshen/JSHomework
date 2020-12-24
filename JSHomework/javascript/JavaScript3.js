@@ -1,15 +1,38 @@
 ﻿function homework3() {
     var str = "<h2>Homework3</h2>";
+    str += "<div class ='h3_div'>";
     str += "<img id=\"idimg1\" src=\"images/star.gif\" />";
     str += "<img id=\"idimg2\" src=\"images/star.gif\" />";
     str += "<img id=\"idimg3\" src=\"images/star.gif\" />";
     str += "<img id=\"idimg4\" src=\"images/star.gif\" />";
     str += "<img id=\"idimg5\" src=\"images/star.gif\" />";
     str += "<h2 id=\"idH2\">尚未評點</h2>";
-    str += "<div><input id=\"idSubmit\"type =\"submit\" value=\"重新評點\" /></div>";
+    str += "<input id=\"idBtnReset\"type =\"button\" value=\"重新評點\" />";
+    str += "</div>";
+    str += "<div class ='h3_div'>";
+    str += "<figure class='h3_figure'>";
+    str += "<img class ='bubble' id=\"idimg11\" src=\"images/star.gif\" />";
+    str += "<figure class='h3_figure'>";
+    str += "<img class ='bubble' id=\"idimg12\" src=\"images/star.gif\" />";
+    str += "<figure class='h3_figure'>";
+    str += "<img class ='bubble' id=\"idimg13\" src=\"images/star.gif\" />";
+    str += "<figure class='h3_figure'>";
+    str += "<img class ='bubble' id=\"idimg14\" src=\"images/star.gif\" />";
+    str += "<figure class='h3_figure'>";
+    str += "<img class ='bubble' id=\"idimg15\" src=\"images/star.gif\" />";
+    str += "</figure>";
+    str += "</figure>";
+    str += "</figure>";
+    str += "</figure>";
+    str += "</figure>";
+    str += "<h2 id=\"idH22\">尚未評點</h2>";
+    str += "<input id=\"idBtnReset2\"type =\"button\" value=\"重新評點\" />";
+    
+    str += "</div>";
 
     var ele = document.getElementById("IDsection");
     ele.innerHTML = str;
+
     bind();
 
     //binding event
@@ -19,7 +42,7 @@
             document.getElementById(`idimg${i}`).addEventListener("mouseout", mouseout);
             document.getElementById(`idimg${i}`).addEventListener("click", click);
         }
-        document.getElementById("idSubmit").addEventListener("click", reset);
+        document.getElementById("idBtnReset").addEventListener("click", reset);
     }
 
     function mouseover() {
@@ -56,5 +79,31 @@
         for (let i = 1; i <= 5; i++) {
             document.getElementById(`idimg${i}`).src = "Images/star.gif";
         }
+    }
+
+    let bubble = document.querySelectorAll(".bubble");
+    let bubbleLen = bubble.length;
+    console.log(bubble);
+    console.log(bubbleLen);
+    
+
+    document.addEventListener("DOMContentLoaded", function () {
+        for (let i = 0; i < bubbleLen; i++) {
+            bubble[i].addEventListener("mouseover", mouseover2);
+            bubble[i].addEventListener("mouseout", mouseout2);
+            bubble[i].addEventListener("click", click2);
+        }
+    });
+    
+    function mouseover2() {
+        this.src = "Images/chngstar.gif";
+    }
+
+    function mouseout2() {
+        this.src = "Images/star.gif";
+    }
+
+    function click2() {
+
     }
 }

@@ -90,6 +90,7 @@
     <Content Include="styles\style.css" />
     <Content Include="styles\style1.css" />
     <Content Include="styles\style2.css" />
+    <Content Include="styles\style3.css" />
     <Content Include="styles\style4.css" />
     <Content Include="styles\style_link.css" />
     <Content Include="Web.config" />

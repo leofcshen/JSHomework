@@ -76,14 +76,14 @@ hgroup {
     margin-top: 40px;
 }
 
-figure {
+/*figure {
     float: left;
     width: 290px;
     height: 220px;
     padding: 5px;
     margin: 20px;
     border: 1px solid #eeeeee;
-}
+}*/
 
 figcaption {
     font-size: 90%;
