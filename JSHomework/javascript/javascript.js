@@ -1,4 +1,4 @@
-﻿window.onload(homework1());
+﻿window.onload(homework2());
 function homework1() {
     var str = "";
     str += "<table>";
@@ -53,7 +53,7 @@ function homework2() {
         let pwdValue = document.getElementById("idPwd").value;
         var ele = document.getElementById("idPwdChk");
 
-        let re = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*])[a-zA-Z\d!@#$%^&*]{6,}$/; //[英文][數字][!@#$%^&*]{至少六位}
+        let re = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*]).{6,}$/; //(?=有英文)(?=有數字)(?=有特殊符號)所有字皆可{至少六位}
         if (re.test(pwdValue))
             ele.innerHTML = "<img class=\"imgBool\" src=\"images/true.jpg\">驗證成功";
         else
@@ -62,21 +62,26 @@ function homework2() {
     function chkDate() {
         let dateValueDay = document.getElementById("idDate").value;  //用來存輸入値的日期值
         let dateValue = document.getElementById("idDate").value; //用來存輸入値
-        let dateValueTime = new Date(document.getElementById("idDate").value); ////用來存系統Date()値
-        var ele = document.getElementById("idDateChk");
+        let dateValueOldTime = new Date(document.getElementById("idDate").value); //用來存系統Date()値
+        let dateV = dateValue.split("/"); //用來存array年月日        
         let dateValueGetDate = new Date(document.getElementById("idDate").value).getDate(); //用來存getDate()值 處理跳日問題
-        dateValueDay = dateValueDay.substr(dateValueDay.lastIndexOf("/") + 1); //取得輸入值 yyyy/mm/dd 的 dd值
+        var ele = document.getElementById("idDateChk");
+        
+        dateValueDay = dateValueDay.substr(dateValueDay.lastIndexOf("/") + 1); //取得輸入值 yyyy/mm/dd 的 dd值，用來跟getDate()值比對
 
-        let re = /^[\d]{1,}\/[\d]{1,2}\/[\d]{1,2}$/; // [0-9]{1位以上}/[0-9]{1-2位}/[0-9]{1-2位}
-
-        if (re.test(dateValue)) { //先判斷格式
-            if (dateValueTime != "Invalid Date" && dateValueGetDate == dateValueDay)  //再判斷日期是否合法且沒跳日
-                ele.innerHTML = "<img class=\"imgBool\" src=\"images/true.jpg\">驗證成功 " + dateValueTime;
+        let re = /^[\d]{4}\/[\d]{1,2}\/[\d]{1,2}$/; // [0-9]{4位}/[0-9]{1-2位}/[0-9]{1-2位}
+        
+        dateV[1] = (dateV[1].length>1) ? dateV[1] : "0" + dateV[1]; //月份補0
+        dateV[2] = (dateV[2].length > 1) ? dateV[2] : "0" + dateV[2]; //日期補0
+                
+        if (re.test(dateValue)) { //先判斷輸入格式
+            if (dateValueOldTime != "Invalid Date" && dateValueGetDate == dateValueDay)  //再判斷日期是否合法且沒跳日
+                ele.innerHTML = "<img class=\"imgBool\" src=\"images/true.jpg\">驗證成功 " + dateV[0] + "年" + dateV[1] + "月" + dateV[2]+ "號";
             else
-                ele.innerHTML = "<img class=\"imgBool\" src=\"images/false.jpg\">驗證失敗：不可空白，西元年/月/日，yyyy/MM/dd，該日期需存在。"; 
+                ele.innerHTML = "<img class=\"imgBool\" src=\"images/false.jpg\">驗證失敗：該日期需存在，不可空白，西元年/月/日，yyyy/MM/dd。"; 
         }
         else
-            ele.innerHTML = "<img class=\"imgBool\" src=\"images/false.jpg\">驗證失敗：格式不正確，不可空白，西元年/月/日，yyyy/MM/dd。"; 
+            ele.innerHTML = "<img class=\"imgBool\" src=\"images/false.jpg\">驗證失敗：輸入格式不正確，不可空白，西元年/月/日，yyyy/MM/dd。"; 
     }
 }
 
@@ -159,7 +164,7 @@ function homework4() {
     str += "</div>";
     str += "<div class=\"imgHolder\">";
     str += "<img src=\"images/2.jpg\" alt=\"\">";
-    str += "<p class=\"captionText\">網球殺人の王子</p>";
+    str += "<p class=\"captionText\">會殺人の網球の王子</p>";
     str += "</div>";
     str += "<div class=\"imgHolder\">";
     str += "<a href='https://zh.wikipedia.org/wiki/%E5%90%8D%E5%81%B5%E6%8E%A2%E6%9F%AF%E5%8D%97' title=\"測試超連結\"><img src=\"images/3.jpg\" alt=\"\"></a>";

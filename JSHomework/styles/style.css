@@ -301,7 +301,7 @@ td, table {
             margin: 5px;
             cursor: pointer;
             bottom:0;
-            background-image: url(/images/playPause.png);
+            background-image: url(../images/playPause.png);
             background-repeat: no-repeat;
             background-size: cover;
         }
