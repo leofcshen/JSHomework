@@ -42,7 +42,7 @@ function homework2() {
         let nameValue = document.getElementById("idName").value;
         var ele = document.getElementById("idNameChk");
                 
-        let re = /^[\u4e00-\u9fa5]{2,}$/;
+        let re = /^[\u4e00-\u9fa5]{2,}$/; //[中文]{至少兩位}
         if (re.test(nameValue))
             ele.innerHTML = "<img class=\"imgBool\" src=\"images/true.jpg\">驗證成功"; 
         else
@@ -53,7 +53,7 @@ function homework2() {
         let pwdValue = document.getElementById("idPwd").value;
         var ele = document.getElementById("idPwdChk");
 
-        let re = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*])[a-zA-Z\d!@#$%^&*]{6,}$/; //[英文][數字][!@#$%^&*]至少六位
+        let re = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*])[a-zA-Z\d!@#$%^&*]{6,}$/; //[英文][數字][!@#$%^&*]{至少六位}
         if (re.test(pwdValue))
             ele.innerHTML = "<img class=\"imgBool\" src=\"images/true.jpg\">驗證成功";
         else
@@ -67,10 +67,10 @@ function homework2() {
         let dateValueGetDate = new Date(document.getElementById("idDate").value).getDate(); //用來存getDate()值 處理跳日問題
         dateValueDay = dateValueDay.substr(dateValueDay.lastIndexOf("/") + 1); //取得輸入值 yyyy/mm/dd 的 dd值
 
-        let re = /^[\d]{1,}\/[\d]{1,2}\/[\d]{1,2}$/; // [0-9]至少一位/[0-9]1-2位/[0-9]1-2位
+        let re = /^[\d]{1,}\/[\d]{1,2}\/[\d]{1,2}$/; // [0-9]{1位以上}/[0-9]{1-2位}/[0-9]{1-2位}
 
         if (re.test(dateValue)) { //先判斷格式
-            if (dateValueTime != "Invalid Date" && dateValueGetDate == dateValueDay)  //再判斷日期是否合法且没跳日
+            if (dateValueTime != "Invalid Date" && dateValueGetDate == dateValueDay)  //再判斷日期是否合法且沒跳日
                 ele.innerHTML = "<img class=\"imgBool\" src=\"images/true.jpg\">驗證成功 " + dateValueTime;
             else
                 ele.innerHTML = "<img class=\"imgBool\" src=\"images/false.jpg\">驗證失敗：不可空白，西元年/月/日，yyyy/MM/dd，該日期需存在。"; 
