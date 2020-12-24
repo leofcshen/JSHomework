@@ -154,29 +154,30 @@ function homework4() {
     str += "<p class=\"captionText\"></p>";
     str += "</div>";
     str += "<div class=\"imgHolder\">";
-    str += "<img src=\"/images/1_ValleyBall.jpg\" alt=\"\">";
+    str += "<img src=\"images/1_ValleyBall.jpg\" alt=\"\">";
     str += "<p class=\"captionText\">不會殺人の排球の少年</p>";
     str += "</div>";
     str += "<div class=\"imgHolder\">";
-    str += "<img src=\"/images/2.jpg\" alt=\"\">";
+    str += "<img src=\"images/2.jpg\" alt=\"\">";
     str += "<p class=\"captionText\">網球殺人の王子</p>";
     str += "</div>";
     str += "<div class=\"imgHolder\">";
-    str += "<a href='https://zh.wikipedia.org/wiki/%E5%90%8D%E5%81%B5%E6%8E%A2%E6%9F%AF%E5%8D%97' title=\"測試超連結\"><img src=\"/images/3.jpg\" alt=\"\"></a>";
+    str += "<a href='https://zh.wikipedia.org/wiki/%E5%90%8D%E5%81%B5%E6%8E%A2%E6%9F%AF%E5%8D%97' title=\"測試超連結\"><img src=\"images/3.jpg\" alt=\"\"></a>";
     str += "<p class=\"captionText\">名偵探兼兇手柯南</p>";
     str += "</div>";
     str += "<div class=\"imgHolder\">";
-    str += "<img src=\" /images/4_kei.jpg\" alt=\"\">";
+    str += "<img src=\" images/4_kei.jpg\" alt=\"\">";
     str += "<p class=\"captionText\">鬼滅の刃</p>";
     str += "</div>";
     str += "<div class=\"imgHolder\">";
-    str += "<img src=\"/images/5_Grand_Blue.jpg\" alt=\"\">";
+    str += "<img src=\"images/5_Grand_Blue.jpg\" alt=\"\">";
     str += "<p class=\"captionText\">碧藍の海</p>";
     str += "</div>";
     str += "</div>";
     str += "<div id=\"dotsContainer\"></div>";
     str += "</div>";
 
+    
     var ele = document.getElementById("IDsection");
     ele.innerHTML = str;
 
@@ -294,7 +295,7 @@ function homework5() {
     alert("施工中");
     var str = "<h2>Homework5</h2>";
     //str += "<div><input type=\"text\" id=\"idName\" name=\"name\" placeholder=\"\" size=\"10\" autocomplete=\"off\" />年</div>";
-    str += "<img src=\"/images/work.gif\">";
+    str += "<img src=\"images/work.gif\">";
     var ele = document.getElementById("IDsection");
     ele.innerHTML = str;
 }
