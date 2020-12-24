@@ -1,0 +1,20 @@
+﻿.t1 {
+    width: 100px;
+    float: left;
+    text-align: right;
+}
+
+.t2 {
+    color: red;
+    width: 800px;
+    padding-left: 100px;
+    padding-bottom: 10px;
+    display: block;
+    text-align: left;
+}
+
+.imgBool {
+    width: 20px;
+    margin: 0px;
+    padding: 0px;
+}

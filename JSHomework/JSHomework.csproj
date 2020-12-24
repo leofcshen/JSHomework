@@ -82,7 +82,14 @@
     <Content Include="images\work.gif" />
     <Content Include="Index.html" />
     <Content Include="javascript\javascript.js" />
+    <Content Include="javascript\JavaScript1.js" />
+    <Content Include="javascript\JavaScript2.js" />
+    <Content Include="javascript\JavaScript3.js" />
+    <Content Include="javascript\JavaScript4.js" />
+    <Content Include="javascript\JavaScript5.js" />
     <Content Include="styles\style.css" />
+    <Content Include="styles\style1.css" />
+    <Content Include="styles\style2.css" />
     <Content Include="styles\style4.css" />
     <Content Include="styles\style_link.css" />
     <Content Include="Web.config" />
