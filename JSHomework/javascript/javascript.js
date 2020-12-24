@@ -1,4 +1,4 @@
-﻿window.onload(homework2());
+﻿window.onload(homework1());
 function homework1() {
     var str = "";
     str += "<table>";
