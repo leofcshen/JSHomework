@@ -3,8 +3,7 @@
     margin: 0;
 }
 
-html,
-body {
+html,body {
     padding: 10px 0px 0px 0px;
     background-color: black;
 }
@@ -130,7 +129,7 @@ body {
             z-index: 5;
             margin: 5px;
             cursor: pointer;
-            background-image: url(./../img/playPause.png);
+            background-image: url(/images/playPause.png);
             background-repeat: no-repeat;
             background-size: cover;
         }

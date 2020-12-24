@@ -166,3 +166,380 @@ td, table {
     margin: 0px;
     padding: 0px;
 }
+/*homework4 Start*/
+* {
+    padding: 0;
+    margin: 0;
+}
+
+/*html, body {
+    padding: 10px 0px 0px 0px;
+    background-color: black;
+}*/
+
+.galleryContainer {
+    width: 100%;
+    height: 700px;
+    max-width: 1000px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-box-shadow: 0px 0px 3px 1px #00000078;
+    box-shadow: 0px 0px 3px 1px #00000078;
+    padding: 10px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0 auto;
+    border: 1px solid white;
+}
+
+    .galleryContainer .silderShowContainer {
+        width: 98%;
+        height: 90%;
+        overflow: hidden;
+        background-color: gainsboro;
+        position: relative;
+        margin: 0 auto;
+    }
+
+        .galleryContainer .silderShowContainer .imgHolder {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            opacity: 0;
+        }
+
+            .galleryContainer .silderShowContainer .imgHolder img {
+                width: 100%;
+                height: 100%;
+            }
+
+            .galleryContainer .silderShowContainer .imgHolder .captionText {
+                display: none;
+            }
+
+        .galleryContainer .silderShowContainer .leftArrow,
+        .galleryContainer .silderShowContainer .rightArrow {
+            width: 50px;
+            height: 72px;
+            background-color: #00000036;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            z-index: 1;
+            -webkit-transition: background 0.5s;
+            transition: background 0.5s;
+            -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+            .galleryContainer .silderShowContainer .leftArrow:hover,
+            .galleryContainer .silderShowContainer .rightArrow:hover {
+                background: #000000a8;
+                cursor: pointer;
+            }
+
+        .galleryContainer .silderShowContainer .rightArrow {
+            left: auto;
+            right: 0;
+            border-top-right-radius: 0px;
+            border-bottom-right-radius: 0px;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+        }
+
+        .galleryContainer .silderShowContainer .arrow {
+            display: inline-block;
+            border: 3px solid white;
+            width: 10px;
+            height: 10px;
+            border-left: none;
+            border-bottom: none;
+            margin: auto;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+        }
+
+        .galleryContainer .silderShowContainer .arrowLeft {
+            -webkit-transform: rotateZ(-135deg);
+            transform: rotateZ(-135deg);
+        }
+
+        .galleryContainer .silderShowContainer .arrowRight {
+            -webkit-transform: rotateZ(45deg);
+            transform: rotateZ(45deg);
+        }
+
+        .galleryContainer .silderShowContainer .captionTextHolder {
+            position: absolute;
+            bottom: 0;
+            z-index: 1;
+            color: white;
+            /*font-family: sans-serif;*/
+            font-family: 標楷體;
+            font-size: 30px;
+            font-weight: bold;
+            text-align: center;
+            width: 100%;
+            background-color: #00000047;
+            height: 50px;
+            line-height: 50px;
+            overflow: hidden;
+        }
+
+        .galleryContainer .silderShowContainer #playPauseBtn {
+            width: 32px;
+            height: 32px;
+            position: absolute;
+            z-index: 5;
+            margin: 5px;
+            cursor: pointer;
+            background-image: url(/images/playPause.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+    .galleryContainer #dotsContainer {
+        width: 100%;
+        height: 10%;
+        text-align: center;
+        padding-top: 20px;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+        .galleryContainer #dotsContainer .dots {
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            margin-left: 10px;
+            background-color: #bbb;
+            cursor: pointer;
+            -webkit-transition: background-color 0.5s;
+            transition: background-color 0.5s;
+        }
+
+            .galleryContainer #dotsContainer .dots:hover {
+                background-color: #717171;
+            }
+
+        .galleryContainer #dotsContainer .active {
+            background-color: #717171;
+        }
+
+        .galleryContainer #dotsContainer :first-child {
+            margin-left: 0;
+        }
+
+    .galleryContainer .moveLeftCurrentSlide {
+        -webkit-animation-name: moveLeftCuurent;
+        animation-name: moveLeftCuurent;
+        -webkit-animation-duration: 0.5s;
+        animation-duration: 0.5s;
+        -webkit-animation-timing-function: linear;
+        animation-timing-function: linear;
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+    }
+
+    .galleryContainer .moveLeftNextSlide {
+        -webkit-animation-name: moveLeftNext;
+        animation-name: moveLeftNext;
+        -webkit-animation-duration: 0.5s;
+        animation-duration: 0.5s;
+        -webkit-animation-timing-function: linear;
+        animation-timing-function: linear;
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+    }
+
+    .galleryContainer .moveRightCurrentSlide {
+        -webkit-animation-name: moveRightCurrent;
+        animation-name: moveRightCurrent;
+        -webkit-animation-duration: 0.5s;
+        animation-duration: 0.5s;
+        -webkit-animation-timing-function: linear;
+        animation-timing-function: linear;
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+    }
+
+    .galleryContainer .moveRightNextSlide {
+        -webkit-animation-name: moveRightNext;
+        animation-name: moveRightNext;
+        -webkit-animation-duration: 0.5s;
+        animation-duration: 0.5s;
+        -webkit-animation-timing-function: linear;
+        animation-timing-function: linear;
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+    }
+
+    .galleryContainer .slideTextFromBottom {
+        -webkit-animation-name: slideTextFromBottom;
+        animation-name: slideTextFromBottom;
+        -webkit-animation-duration: .7s;
+        animation-duration: .7s;
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+    }
+
+    .galleryContainer .slideTextFromTop {
+        -webkit-animation-name: slideTextFromTop;
+        animation-name: slideTextFromTop;
+        -webkit-animation-duration: .7s;
+        animation-duration: .7s;
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;        
+    }
+
+@-webkit-keyframes moveLeftCurrent {
+    from {
+        margin-left: 0;
+        opacity: 1;
+    }
+
+    to {
+        margin-left: -100%;
+        opacity: 1;
+    }
+}
+
+@keyframes moveLeftCurrent {
+    from {
+        margin-left: 0;
+        opacity: 1;
+    }
+
+    to {
+        margin-left: -100%;
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes moveRightCurrent {
+    from {
+        margin-left: 0;
+        opacity: 1;
+    }
+
+    to {
+        margin-left: 100%;
+        opacity: 1;
+    }
+}
+
+@keyframes moveRightCurrent {
+    from {
+        margin-left: 0;
+        opacity: 1;
+    }
+
+    to {
+        margin-left: 100%;
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes moveLeftNext {
+    from {
+        margin-left: 100%;
+        opacity: 1;
+    }
+
+    to {
+        margin-left: 0%;
+        opacity: 1;
+    }
+}
+
+@keyframes moveLeftNext {
+    from {
+        margin-left: 100%;
+        opacity: 1;
+    }
+
+    to {
+        margin-left: 0%;
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes moveRightNext {
+    from {
+        margin-left: -100%;
+        opacity: 1;
+    }
+
+    to {
+        margin-left: 0%;
+        opacity: 1;
+    }
+}
+
+@keyframes moveRightNext {
+    from {
+        margin-left: -100%;
+        opacity: 1;
+    }
+
+    to {
+        margin-left: 0%;
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes slideTextFromBottom {
+    from {
+        opacity: 0;
+        margin-top: 100px;
+    }
+
+    to {
+        opacity: 1;
+        margin-top: 0px;
+    }
+}
+
+@keyframes slideTextFromBottom {
+    from {
+        opacity: 0;
+        margin-top: 100px;
+    }
+
+    to {
+        opacity: 1;
+        margin-top: 0px;
+    }
+}
+
+@-webkit-keyframes slideTextFromTop {
+    from {
+        opacity: 0;
+        margin-top: -100px;
+    }
+
+    to {
+        opacity: 1;
+        margin-top: 0px;
+    }
+}
+
+@keyframes slideTextFromTop {
+    from {
+        opacity: 0;
+        margin-top: -100px;
+    }
+
+    to {
+        opacity: 1;
+        margin-top: 0px;
+    }
+}
