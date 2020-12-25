@@ -4,5 +4,5 @@
 }
 
 #idH22 {    
-    clear:both;
+    clear:both; /*防止浮動*/
 }

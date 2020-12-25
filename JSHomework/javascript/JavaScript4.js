@@ -1,7 +1,6 @@
-﻿function homework4() {
-    //window.alert("施工中");
-    var str = "<h2>Homework4</h2>";
-    //str += "<img src=\"images/work.gif\" />";
+﻿function homework4() {    
+    //輸出 html
+    var str = "<h2>Homework4</h2>";    
     str += "<div class=\"galleryContainer\">";
     str += "<div class=\"silderShowContainer\">";
     str += "<div id=\"playPauseBtn\"></div>";
@@ -33,8 +32,6 @@
     str += "</div>";
     str += "<div id=\"dotsContainer\"></div>";
     str += "</div>";
-
-
     var ele = document.getElementById("IDsection");
     ele.innerHTML = str;
 

@@ -1,4 +1,5 @@
 ﻿function homework3() {
+    //輸出 html
     var str = "<h2>Homework3</h2>";
     str += "<div class ='h3_div'>";
     str += "<img id=\"idimg1\" src=\"images/star.gif\" />";
@@ -47,15 +48,13 @@
     function mouseover() {
         for (let i = 1; i <= this.id.substr(5); i++) {
             document.getElementById(`idimg${i}`).src = "Images/chngstar.gif";
-        }
-        console.log(this.id);
+        }        
     }
     //滑鼠移出
     function mouseout() {
         for (let i = 1; i <= this.id.substr(5); i++) {
             document.getElementById(`idimg${i}`).src = "Images/star.gif";
-        }
-        console.log(this.id);
+        }        
     }
     //滑鼠點擊
     function click() {
