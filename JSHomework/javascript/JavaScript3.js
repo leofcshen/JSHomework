@@ -32,10 +32,9 @@
 
     var ele = document.getElementById("IDsection");
     ele.innerHTML = str;
-
     bind();
-
-    //binding event
+    //for loop 執行開始
+    //綁定 function
     function bind() {
         for (let i = 1; i <= 5; i++) {
             document.getElementById(`idimg${i}`).addEventListener("mouseover", mouseover);
@@ -44,21 +43,21 @@
         }
         document.getElementById("idBtnReset").addEventListener("click", reset);
     }
-
+    //滑鼠移入
     function mouseover() {
         for (let i = 1; i <= this.id.substr(5); i++) {
             document.getElementById(`idimg${i}`).src = "Images/chngstar.gif";
         }
         console.log(this.id);
     }
-
+    //滑鼠移出
     function mouseout() {
         for (let i = 1; i <= this.id.substr(5); i++) {
             document.getElementById(`idimg${i}`).src = "Images/star.gif";
         }
         console.log(this.id);
     }
-
+    //滑鼠點擊
     function click() {
         document.getElementById("idH2").innerHTML = `評點分數：${this.id.substr(5)}`;
         for (let i = 1; i <= this.id.substr(5); i++) {
@@ -71,21 +70,20 @@
             document.getElementById(`idimg${i}`).removeEventListener("click", click);
         }
     }
-
+    //重新評點按扭
     function reset() {
-        bind();
+        bind();//重新綁定 function
         document.getElementById("idH2").innerHTML = "尚未評點";
         //圖片復原
         for (let i = 1; i <= 5; i++) {
             document.getElementById(`idimg${i}`).src = "Images/star.gif";
         }
     }
-
+    //for loop 執行結束
     let bubble = document.querySelectorAll(".bubble");
     let bubbleLen = bubble.length;
     console.log(bubble);
     console.log(bubbleLen);
-    
 
     document.addEventListener("DOMContentLoaded", function () {
         for (let i = 0; i < bubbleLen; i++) {
