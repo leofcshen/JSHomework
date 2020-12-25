@@ -96,7 +96,7 @@
     });
     
     function mouseover2() {
-        this.src = "Images/chngstar.gif";
+        this.src = "Images/chngstar.gif";        
     }
 
     function mouseout2() {
