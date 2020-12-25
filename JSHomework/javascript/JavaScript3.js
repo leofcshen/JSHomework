@@ -2,39 +2,39 @@
     //輸出 html
     var str = "<h2>Homework3</h2>";
     str += "<div class ='h3_div'>";
-    str += "<img id=\"idimg1\" src=\"images/star.gif\" />";
-    str += "<img id=\"idimg2\" src=\"images/star.gif\" />";
-    str += "<img id=\"idimg3\" src=\"images/star.gif\" />";
-    str += "<img id=\"idimg4\" src=\"images/star.gif\" />";
-    str += "<img id=\"idimg5\" src=\"images/star.gif\" />";
-    str += "<h2 id=\"idH2\">尚未評點</h2>";
-    str += "<input id=\"idBtnReset\"type =\"button\" value=\"重新評點\" />";
+    str += "<img id='idimg1' src='images/star.gif' />";
+    str += "<img id='idimg2' src='images/star.gif' />";
+    str += "<img id='idimg3' src='images/star.gif' />";
+    str += "<img id='idimg4' src='images/star.gif' />";
+    str += "<img id='idimg5' src='images/star.gif' />";
+    str += "<h2 id='idH2'>尚未評點</h2>";
+    str += "<input id='idBtnReset'type ='button' value='重新評點' />";
     str += "</div>";
     str += "<div class ='h3_div'>";
     str += "<figure class='h3_figure'>";
-    str += "<img class ='bubble' id=\"idimg11\" src=\"images/star.gif\" />";
+    str += "<img class ='bubble' id='idimg11' src='images/star.gif' />";
     str += "<figure class='h3_figure'>";
-    str += "<img class ='bubble' id=\"idimg12\" src=\"images/star.gif\" />";
+    str += "<img class ='bubble' id='idimg12' src='images/star.gif' />";
     str += "<figure class='h3_figure'>";
-    str += "<img class ='bubble' id=\"idimg13\" src=\"images/star.gif\" />";
+    str += "<img class ='bubble' id='idimg13' src='images/star.gif' />";
     str += "<figure class='h3_figure'>";
-    str += "<img class ='bubble' id=\"idimg14\" src=\"images/star.gif\" />";
+    str += "<img class ='bubble' id='idimg14' src='images/star.gif' />";
     str += "<figure class='h3_figure'>";
-    str += "<img class ='bubble' id=\"idimg15\" src=\"images/star.gif\" />";
+    str += "<img class ='bubble' id='idimg15' src='images/star.gif' />";
     str += "</figure>";
     str += "</figure>";
     str += "</figure>";
     str += "</figure>";
     str += "</figure>";
-    str += "<h2 id=\"idH22\">尚未評點</h2>";
-    str += "<input id=\"idBtnReset2\"type =\"button\" value=\"重新評點\" />";
+    str += "<h2 id='idH22'>尚未評點</h2>";
+    str += "<input id='idBtnReset2' type ='button' value='重新評點' />";
     
     str += "</div>";
 
     var ele = document.getElementById("IDsection");
     ele.innerHTML = str;
     bind();
-    //for loop 執行開始
+    //for loop 開始
     //綁定 function
     function bind() {
         for (let i = 1; i <= 5; i++) {
@@ -78,7 +78,8 @@
             document.getElementById(`idimg${i}`).src = "Images/star.gif";
         }
     }
-    //for loop 執行結束
+    //for loop 結束
+    //bubble 開始
     let bubble = document.querySelectorAll(".bubble");
     let bubbleLen = bubble.length;
     console.log(bubble);
@@ -103,4 +104,5 @@
     function click2() {
 
     }
+    //bubble 結束
 }

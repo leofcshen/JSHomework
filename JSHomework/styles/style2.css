@@ -25,5 +25,9 @@
 }
 
 .h2_chkT {
-    color: green;    
+    color: green;
+}
+
+.h2_input {
+    margin-left:20px;
 }

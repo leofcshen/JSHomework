@@ -7,17 +7,17 @@
     let dateStr = dateNowY + "/" + dateNowM + "/" + dateNowD + "(今天日期)";//yyyy/mm/dd(今天日期)
     //輸出 html
     var str = "<h2>Homework2</h2>";
-    str += "<form action=\"#\" method=\"get\" enctype=\"multipart / form - data\">";
+    str += "<form action='#' method='get' enctype='multipart / form - data'>";
     str += "<fieldset><legend>表單</legend>";
-    str += "<div><label for=\"account1\" class=\"t1\">姓名</label><input type=\"text\" id=\"idName\" name=\"name\" placeholder=\"王建民\" size=\"10\" autocomplete=\"off\" /></div>";
-    str += "<div><label class=\"t2\" class='h2_NameF' id=\"idNameChk1\"><ul><dl>不可空白</dl><dl>至少兩個字元</dl><dl>只能中文<dl></ul></label></div>";
-    str += "<div><label class=\"t2\" class='h2_NameF' id=\"idNameChk\"></label></div>";
-    str += "<div><label for=\"pwd1\" class=\"t1\">密碼</label><input type=\"text\" Id=\"idPwd\" name=\"pwd\" placeholder=\"請輸入密碼\" /></div>";
-    str += "<div><label class=\"t2\" id=\"idPwdChk1\"><ul><dl>不可空白</dl><dl>至少6個字元</dl><dl>必須包含英文字母、數字、特殊字元[!@#$%^&*]<dl></ul></label></div>";
-    str += "<div><label class=\"t2\" id=\"idPwdChk\"></label></div>";
-    str += "<div><label for=\"date1\" class=\"t1\">日期</label><input type=\"text\" id=\"idDate\" name=\"date\" placeholder=" + dateStr + " autocomplete=\"off\" /></div>";
-    str += "<div><label class=\"t2\" id=\"idDateChk1\"><ul><dl>不可空白</dl><dl>西元年/月/日，yyyy/MM/dd</dl></label></div>";
-    str += "<div><label class=\"t2\" id=\"idDateChk\"></label></div>";
+    str += "<div><label for='account1' class='t1'>姓名</label><input type='text' class='.h2_input' id='idName' name='name' placeholder='王建民' autocomplete='off' /></div>";
+    str += "<div><label class='t2' class='h2_NameF' id='idNameChk1'><ul><dl>不可空白</dl><dl>至少兩個字元</dl><dl>只能中文<dl></ul></label></div>";
+    str += "<div><label class='t2' class='h2_NameF' id='idNameChk'></label></div>";
+    str += "<div><label for='pwd1' class='t1'>密碼</label><input type='text' Id='idPwd' name='pwd' placeholder='請輸入密碼' /></div>";
+    str += "<div><label class='t2' id='idPwdChk1'><ul><dl>不可空白</dl><dl>至少6個字元</dl><dl>必須包含英文字母、數字、特殊字元[!@#$%^&*]<dl></ul></label></div>";
+    str += "<div><label class='t2' id='idPwdChk'></label></div>";
+    str += "<div><label for='date1' class='t1'>日期</label><input type='text' id='idDate' name='date' placeholder=" + dateStr + " autocomplete='off' /></div>";
+    str += "<div><label class='t2' id='idDateChk1'><ul><dl>不可空白</dl><dl>西元年/月/日，yyyy/MM/dd</dl></label></div>";
+    str += "<div><label class='t2' id='idDateChk'></label></div>";
     str += "</fieldset></form>";
     var ele = document.getElementById("IDsection");
     ele.innerHTML = str;
@@ -36,14 +36,14 @@
             let b = document.getElementById("idNameChk")
             a.className = "t2 h2_chkT";
             b.className = "t2 h2_chkT";
-            ele.innerHTML = "<img class=\"imgBool\" src=\"images/true.jpg\">驗證成功";
+            ele.innerHTML = "<img class='imgBool' src='images/true.jpg'>驗證成功";
         }
         else {
             let a = document.getElementById("idNameChk1")
             let b = document.getElementById("idNameChk")
             a.className = "t2 h2_chkF";
             b.className = "t2 h2_chkF";
-            ele.innerHTML = "<img class=\"imgBool\" src=\"images/false.jpg\">驗證失敗：請確認輸入值符合規則。";
+            ele.innerHTML = "<img class='imgBool' src='images/false.jpg'>驗證失敗：請確認輸入值符合規則。";
         }
     }
     //驗證密碼
@@ -57,12 +57,12 @@
         if (re.test(pwdValue)) {            
             a.className = "t2 h2_chkT";
             b.className = "t2 h2_chkT";
-            ele.innerHTML = "<img class=\"imgBool\" src=\"images/true.jpg\">驗證成功";
+            ele.innerHTML = "<img class='imgBool' src='images/true.jpg'>驗證成功";
         }
         else {            
             a.className = "t2 h2_chkF";
             b.className = "t2 h2_chkF";
-            ele.innerHTML = "<img class=\"imgBool\" src=\"images/false.jpg\">驗證失敗：請確認輸入值符合規則。";
+            ele.innerHTML = "<img class='imgBool' src='images/false.jpg'>驗證失敗：請確認輸入值符合規則。";
         }            
     }
     //驗證日期
@@ -84,18 +84,18 @@
                 dateV[2] = (dateV[2].length > 1) ? dateV[2] : "0" + dateV[2];//dd補齊2位做輸出用
                 a.className = "t2 h2_chkT";
                 b.className = "t2 h2_chkT";
-                ele.innerHTML = "<img class=\"imgBool\" src=\"images/true.jpg\">驗證成功 " + dateV[0] + "年" + dateV[1] + "月" + dateV[2] + "號";
+                ele.innerHTML = "<img class='imgBool' src='images/true.jpg'>驗證成功 " + dateV[0] + "年" + dateV[1] + "月" + dateV[2] + "號";
             }
             else {//日期錯誤
                 a.className = "t2 h2_chkF";
                 b.className = "t2 h2_chkF";
-                ele.innerHTML = "<img class=\"imgBool\" src=\"images/false.jpg\">驗證失敗：該日期不存在。";
+                ele.innerHTML = "<img class='imgBool' src='images/false.jpg'>驗證失敗：該日期不存在。";
             }
         }
         else {//格式錯誤            
             a.className = "t2 h2_chkF";
             b.className = "t2 h2_chkF";
-            ele.innerHTML = "<img class=\"imgBool\" src=\"images/false.jpg\">驗證失敗：輸入格式不正確，請確認輸入值符合規則。";
+            ele.innerHTML = "<img class='imgBool' src='images/false.jpg'>驗證失敗：輸入格式不正確，請確認輸入值符合規則。";
         }            
     }
 }
