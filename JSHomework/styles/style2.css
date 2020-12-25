@@ -19,12 +19,11 @@
     padding: 0px;
 }
 
-..h2_nameF {
+..h2_chkF {
     color: red;
-    font-size: 20px;
+    
 }
 
-.h2_nameT {
-    color: green;
-    font-size: 40px;
+.h2_chkT {
+    color: green;    
 }
