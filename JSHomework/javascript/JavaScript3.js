@@ -48,13 +48,15 @@
     function mouseover() {
         for (let i = 1; i <= this.id.substr(5); i++) {
             document.getElementById(`idimg${i}`).src = "Images/chngstar.gif";
+            document.getElementById("idH2").innerHTML = `評點分數：${this.id.substr(5)}`;
         }        
     }
     //滑鼠移出
     function mouseout() {
         for (let i = 1; i <= this.id.substr(5); i++) {
             document.getElementById(`idimg${i}`).src = "Images/star.gif";
-        }        
+        }
+        document.getElementById("idH2").innerHTML = `尚未評點`;
     }
     //滑鼠點擊
     function click() {
@@ -84,14 +86,12 @@
     let bubbleLen = bubble.length;
     console.log(bubble);
     console.log(bubbleLen);
-
-    document.addEventListener("DOMContentLoaded", function () {
-        for (let i = 0; i < bubbleLen; i++) {
-            bubble[i].addEventListener("mouseover", mouseover2);
-            bubble[i].addEventListener("mouseout", mouseout2);
-            bubble[i].addEventListener("click", click2);
-        }
-    });
+    
+    for (let i = 0; i < bubbleLen; i++) {        
+        bubble[i].addEventListener("mouseover", mouseover2,true);
+        bubble[i].addEventListener("mouseout", mouseout2,true);
+        bubble[i].addEventListener("click", click2,true);
+    }
     
     function mouseover2() {
         this.src = "Images/chngstar.gif";        
@@ -105,4 +105,5 @@
 
     }
     //bubble 結束
+    
 }
