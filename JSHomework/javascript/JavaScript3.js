@@ -9,8 +9,7 @@
     str += "<img id='idimg5' src='images/star.gif' />";
     str += "<h2 id='idH2'>尚未評點</h2>";
     str += "<input id='idBtnReset'type ='button' value='重新評點' />";
-    str += "</div>";
-    
+    str += "</div>";    
 
     var ele = document.getElementById("IDsection");
     ele.innerHTML = str;
