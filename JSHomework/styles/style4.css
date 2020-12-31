@@ -4,8 +4,8 @@
 }
 
 .galleryContainer {
-    width: 100%;
-    height: 520px;
+    width: 80%;
+    height: 400px;
     max-width: 1000px;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -107,7 +107,7 @@
             position: absolute;
             bottom: 0;
             z-index: 1;
-            color: #930000;
+            color: white;
             font-family: 標楷體;
             font-size: 40px;
             font-weight: 900;

@@ -14,14 +14,14 @@ body {
 
 .wrapper {
     width: 1400px;
-    height: 900px;
+    height: 690px;
     margin: 20px auto 20px auto;
     border: 2px solid #000000;
     background-color: #ffffff;
 }
 
 header {
-    height: 238px;
+    height: 180px;
     background-image: url("../images/header.jpg");
     background-size: 1400px 238px;
 }

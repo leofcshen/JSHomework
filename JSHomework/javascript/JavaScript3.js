@@ -10,26 +10,7 @@
     str += "<h2 id='idH2'>尚未評點</h2>";
     str += "<input id='idBtnReset'type ='button' value='重新評點' />";
     str += "</div>";
-    str += "<div class ='h3_div'>";
-    str += "<figure class='h3_figure'>";
-    str += "<img class ='bubble' id='idimg11' src='images/star.gif' />";
-    str += "<figure class='h3_figure'>";
-    str += "<img class ='bubble' id='idimg12' src='images/star.gif' />";
-    str += "<figure class='h3_figure'>";
-    str += "<img class ='bubble' id='idimg13' src='images/star.gif' />";
-    str += "<figure class='h3_figure'>";
-    str += "<img class ='bubble' id='idimg14' src='images/star.gif' />";
-    str += "<figure class='h3_figure'>";
-    str += "<img class ='bubble' id='idimg15' src='images/star.gif' />";
-    str += "</figure>";
-    str += "</figure>";
-    str += "</figure>";
-    str += "</figure>";
-    str += "</figure>";
-    str += "<h2 id='idH22'>尚未評點</h2>";
-    str += "<input id='idBtnReset2' type ='button' value='重新評點' />";
     
-    str += "</div>";
 
     var ele = document.getElementById("IDsection");
     ele.innerHTML = str;
@@ -81,29 +62,4 @@
         }
     }
     //for loop 結束
-    //bubble 開始
-    let bubble = document.querySelectorAll(".bubble");
-    let bubbleLen = bubble.length;
-    console.log(bubble);
-    console.log(bubbleLen);
-    
-    for (let i = 0; i < bubbleLen; i++) {        
-        bubble[i].addEventListener("mouseover", mouseover2,true);
-        bubble[i].addEventListener("mouseout", mouseout2,true);
-        bubble[i].addEventListener("click", click2,true);
-    }
-    
-    function mouseover2() {
-        this.src = "Images/chngstar.gif";        
-    }
-
-    function mouseout2() {
-        this.src = "Images/star.gif";
-    }
-
-    function click2() {
-
-    }
-    //bubble 結束
-    
 }

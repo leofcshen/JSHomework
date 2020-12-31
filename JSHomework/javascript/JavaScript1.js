@@ -1,6 +1,7 @@
 ﻿function homework1() {
     //輸出 html
     var str = "<h2>Homework1</h2>";
+    str += "<div class='h1_div'>";
     str += "<table class='h1_table'>";
     for (var x = 1; x <= 9; x++) {
         str += "<tr>";
@@ -13,7 +14,8 @@
         str += "</tr>";
     }
     str += "</table>";
-    str += "<a class='h1_a' id='focus'>放大鏡</a>";
+    str += "<a class='h1_a' id='focus'>放大區</a>";
+    str += "</div>";
     var ele = document.getElementById("IDsection");
     ele.innerHTML = str;
     //綁定 function
@@ -33,6 +35,6 @@
     function mouseOut() {
         this.className = "h1_td1";
         let a = document.getElementById("focus");
-        a.innerText = "放大鏡";
+        a.innerText = "放大區";
     }    
 }
